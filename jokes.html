@@ -1,0 +1,83 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <title>Dad Joke Generator</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+ <div class="row">
+  <div class="column">
+    <img class=img1 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYdZPSX49C6DdsEl9ovD5DJ-d7ek3sjQfXNE-YXYQ2f7S2RAss">
+  </div>
+  <div class="column">
+    <img class=img2 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs1j1q6oDP2UHD8mJyboxLYxc85HvgMApv__M1YV0m5z9RwV1z">
+  </div>
+  <div class="column">
+    <img class=img3 src="https://www.livin3.com/wp-content/uploads/2015/05/men-laughing.jpg">
+  </div>
+</div>
+  <div class="top-panel">
+    <h>Dad Joke Generator</h>
+    <div id="joke"></div>
+
+    <button type="button" onclick="getJoke()">Random Joke</button>
+
+    <script>
+      function getJoke() {
+        var myurl = "https://icanhazdadjoke.com/";
+        console.log(myurl);
+        $.ajax({
+          url: myurl,
+          crossDomain: true,
+          dataType: "json",
+          success: function(parsed_json) {
+            console.log(parsed_json);
+            $("#joke").html(JSON.stringify(parsed_json["joke"]));
+          }
+        });
+      }
+    </script>
+
+  </div>
+  </div>
+  <div class="search-panel">
+    <h>Joke Search</h>
+    <form>
+      Enter A Search Term: <input type="text" id="searchField" value="">
+      <input id="searchButton" type="submit" value="Submit">
+    </form>
+    <p id="search"> </p>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $("#searchButton").click(function(e) {
+        var value = $("#searchField").val();
+        console.log(value);
+        e.preventDefault();
+        var myurl = "https://icanhazdadjoke.com/search?term="
+        myurl += value;
+        console.log(myurl);
+        $.ajax({
+          url: myurl,
+          dataType: "json",
+          success: function(parsed_json) {
+            console.log(parsed_json);
+            var items = parsed_json['results'];
+            var everything = "<ul>";
+            $.each(parsed_json['results'], function(i, item) {
+              everything += "<li>"
+              everything += item.joke;
+              everything += "</li>";
+            })
+            everything += "</ul>";
+            console.log(everything);
+            $("#search").html(everything);
+          }
+        }) //ajax
+      }) //click function
+    }) //ready function
+  </script>
+
+</html>
