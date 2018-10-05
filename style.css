@@ -3,16 +3,22 @@
     src: url(./ostrich-sans.sans-medium.ttf);
 }
 
+@font-face {
+    font-family: Regular;
+    src: url(./OpenSans-Regular.ttf);
+}
+
 body
 {
-    background-color: grey;
+    background-image: url("tileable_wood_texture_@2X.png");
+    background-repeat: repeat
 }
 
 h{
     
   font-family: Ostrich; font-size: 56px;
   font-style: normal; font-variant: normal;
-  font-weight: 300; line-height: 35px; color:black;
+  font-weight: 1000; line-height: 35px; color:black;
 }
 
 
@@ -42,9 +48,9 @@ h{
 .column2 {
   flex: 50%;
   margin: 10px;
-  font-family: Ostrich; font-size: 12px;
+  font-family: Regular; font-size: 24px;
   font-style: normal; font-variant: normal;
-  font-weight: 300; line-height: 35px; color:black;
+  font-weight: 700; line-height: 25px; color:black;
 }
 
 .img1

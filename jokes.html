@@ -12,7 +12,8 @@
   </div>
 
     <div class="row2">
-    <div class="column2" <h>Dad Joke Generator</h>
+    <div class="column2" <h>Get Random Joke</h>
+    <p> </p>
       <div id="joke"></div>
 
       <button type="button" onclick="getJoke()">Random Joke</button>
@@ -44,18 +45,6 @@
   </div>
   </div>
   
-    <div class="row">
-    <div class="column">
-      <img class=img1 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYdZPSX49C6DdsEl9ovD5DJ-d7ek3sjQfXNE-YXYQ2f7S2RAss">
-    </div>
-    <div class="column">
-      <img class=img2 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs1j1q6oDP2UHD8mJyboxLYxc85HvgMApv__M1YV0m5z9RwV1z">
-    </div>
-    <div class="column">
-      <img class=img3 src="https://www.livin3.com/wp-content/uploads/2015/05/men-laughing.jpg">
-    </div>
-  </div> 
-  
   <script>
     $(document).ready(function() {
       $("#searchButton").click(function(e) {
@@ -75,7 +64,7 @@
             $.each(parsed_json['results'], function(i, item) {
               everything += "<li>"
               everything += item.joke;
-              everything += "</li>";
+              everything += "\n</li>";
             })
             everything += "</ul>";
             console.log(everything);
