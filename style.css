@@ -9,19 +9,19 @@ body
 }
 
 h{
-    flex: 0 0 65%;
-   padding: 50px;
-   margin: 0px;
+    
   font-family: Ostrich; font-size: 56px;
   font-style: normal; font-variant: normal;
   font-weight: 300; line-height: 35px; color:black;
 }
 
-.top-panel
-{
-    text-align: center;
-}
 
+.head{
+   text-align: center;
+   flex: 0 0 65%;
+   padding: 50px;
+   margin: 10px;
+}
 .row {
   display: flex;
 }
@@ -29,25 +29,41 @@ h{
 .column {
   flex: 33.33%;
   padding: 5px;
+  margin: 10px;
+}
+
+.row2 {
+  display: flex;
+  font-family: Ostrich; font-size: 56px;
+  font-style: normal; font-variant: normal;
+  font-weight: 300; line-height: 35px; color:black;
+}
+
+.column2 {
+  flex: 50%;
+  margin: 10px;
+  font-family: Ostrich; font-size: 12px;
+  font-style: normal; font-variant: normal;
+  font-weight: 300; line-height: 35px; color:black;
 }
 
 .img1
 {
     height :200px; 
-    width : 350px;
+    width : 300px;
 }
 
 
 
 .img2
 {
-    height :200px; 
-    width : 350px;
+   height :200px; 
+    width : 300px;
 }
 
 .img3
 {
     height :200px; 
-    width : 350px;
+    width : 300px;
 }
 
